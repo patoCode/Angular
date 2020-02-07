@@ -1,0 +1,22 @@
+<h2>{{titulo}}</h2>
+<p>
+    Añadir marca <input type="text" name="mi_marca" [(ngModel)]="mi_marca">
+    {{mi_marca}}
+
+    <button (click)="getMarca()">MArca</button>
+    <button (click)="addMarca()">+</button>
+</p>
+<ul>
+    <li *ngFor="let zapatilla of zapatillas">
+        <strong>{{zapatilla.nombre}}</strong> {{zapatilla.precio}} $us
+        <span *ngIf="zapatilla.precio < 80" [style.background]="zapatilla.precio < 80 ? 'green':'red'">EN
+            OFERTA!!!</span>
+    </li>
+</ul>
+
+<p>Marcas</p>
+<ul>
+
+    <li *ngFor="let marca of marcas">{{marca}}</li>
+
+</ul>
